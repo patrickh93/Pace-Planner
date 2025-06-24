@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="app.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Pace Planner</title>
+  </head>
+  <body>
+    <div class="page-wrapper">
+    <!-- header -->
+    <header>
+      <nav class="navbar">
+        <div class="pace-planner-logo">
+          <img src="Images/clock.jpg" alt="stopwatch logo" />
+        </div>
+        <div class="pace-planner-heading">
+          <h2>Pace Planner Running Calculator</h2>
+        </div>
+      </nav>
+    </header>
+      <!-- pace Calculator -->
+    <section class="pace-calculator">
+      <h2 id="calculate-heading">Calculate Your Pace</h2>
+      <button class="paceBtn">Pace</button>
+      <button class="timeBtn">Time</button>
+      <button class="distanceBtn">Distance</button>
+      <div class="pace-container">
+        <div id="paceDiv">
+          <form action="#" id="paceForm">
+            <div class="time">
+              <label for="hours">Hours:</label>
+              <input type="number" id="hours" placeholder="Enter hours" />
+
+              <label for="minutes">Minutes:</label>
+              <input type="number" id="minutes" placeholder="Enter minutes" />
+
+              <label for="seconds">Seconds:</label>
+              <input
+                type="number"
+                id="seconds"
+                placeholder="Enter seconds"
+                step="0.01"
+              />
+            </div>
+
+            <div class="time">
+              <label for="distance">Enter Distance(km):</label>
+              <input
+                type="number"
+                id="paceDistance"
+                placeholder="Enter distance"
+                required
+                step="0.0001"
+              />
+
+              <select name="" id="paceEvent">
+                <option value="" selected disabled>
+                  -- Or pick an event --
+                </option>
+                <option value="3">3km</option>
+                <option value="5">5km</option>
+                <option value="10">10km</option>
+                <option value="21.0975">Half Marathon(21.1km)</option>
+                <option value="42.195">Full Marathon(42.2km)</option>
+              </select>
+            </div>
+            <div class="time units-label">
+              <label>Units:</label>
+              <input type="radio" id="km" name="units" value="km" checked>
+              <label for="km">km</label>
+              
+              <input type="radio" id="miles" name="units" value="miles">
+              <label for="miles">miles</label>
+            </div>
+
+            <button id="submit">Calculate Pace</button>
+            <button class="reset" type="reset">Clear</button>
+          </form>
+        </div>
+        <div id="timeDiv">
+          <form action="#" id="timeForm">
+            <div class="time ">
+              <label for="">Pace:</label>
+              <input
+                type="number"
+                id="timeMinutes"
+                placeholder="Enter minutes"
+                required
+              />
+              <input
+                type="number"
+                id="timeSeconds"
+                placeholder="Enter seconds"
+                required
+                step="0.01"
+              />
+              <p>per km</p>
+            </div>
+
+            <div class="time">
+              <label for="distance">Enter Distance(km):</label>
+              <input
+                type="number"
+                id="timeDistance"
+                placeholder="Enter distance"
+                required
+                step="0.0001"
+              />
+
+              <select name="" id="timeEvent">
+                <option value="" selected disabled>
+                  -- Or pick an event --
+                </option>
+                <option value="3">3km</option>
+                <option value="5">5km</option>
+                <option value="10">10km</option>
+                <option value="21.0975">Half Marathon(21.1km)</option>
+                <option value="42.195">Full Marathon(42.2km)</option>
+              </select>
+            </div>
+            <div class="time units-label">
+              <label>Units:</label>
+              <input type="radio" id="km" name="units" value="km" checked>
+              <label for="km">km</label>
+              
+              <input type="radio" id="miles" name="units" value="miles">
+              <label for="miles">miles</label>
+            </div>
+            <button id="submit">Calculate Time</button>
+            <button class="reset" type="reset">Clear</button>
+          </form>
+        </div>
+        <div id="distanceDiv">
+          <form action="#" id="distForm">
+            <div class="time">
+              <label for="hours">Hours:</label>
+              <input type="number" id="distHours" placeholder="Enter hours" />
+
+              <label for="minutes">Minutes:</label>
+              <input
+                type="number"
+                id="distMinutes"
+                placeholder="Enter minutes"
+              />
+
+              <label for="seconds">Seconds:</label>
+              <input
+                type="number"
+                id="distSeconds"
+                placeholder="Enter seconds"
+                step="0.01"
+              />
+            </div>
+
+            <div class="time">
+              <label for="">Pace:</label>
+              <input
+                type="number"
+                id="distPaceMinutes"
+                placeholder="Enter minutes"
+              />
+              <input
+                type="number"
+                id="distPaceSeconds"
+                placeholder="Enter seconds"
+                step="0.01"
+              />
+              <p>per km</p>
+            </div>
+            <div class="time units-label">
+              <label>Units:</label>
+              <input type="radio" id="km" name="units" value="km" checked>
+              <label for="km">km</label>
+              
+              <input type="radio" id="miles" name="units" value="miles">
+              <label for="miles">miles</label>
+            </div>
+            <button id="submit">Calculate Distance</button>
+            <button class="reset" type="reset">Clear</button>
+          </form>
+        </div>
+        <div id="result"></div>
+      </div>
+      <p class="note">Note: All distances and paces are in kilometers.</p>
+      
+    </section>
+  </div>
+    <!-- footer -->
+    <section class="footer">
+      <div class="copyright">
+        <p>
+          © 2025 • Pace Planner By Patrick Hughes • All Rights
+          Reserved •
+        </p>
+        </div>
+        <div class="socials-links">
+          <ion-icon name="logo-facebook" class="logo-facebook"></ion-icon
+          ><ion-icon name="logo-twitter" class="logo-twitter"></ion-icon>
+          <ion-icon name="logo-instagram" class="logo-instagram"></ion-icon>
+        </div>
+      </div>
+    </section>
+
+    <!-- logos -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/c6c81f7c58.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
+  </body>
+</html>
